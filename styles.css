@@ -1,3 +1,18 @@
+.resolution-input,
+.past-resolution-box,
+.resolution-input::placeholder,
+h1,
+h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.4rem;
+    color: #2c2c2c;
+}
+
+#timer {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1px;
+}
+
 .container {
     background-color: #fff5de;
 
@@ -34,22 +49,144 @@
     height: 100%;
     overflow-y: auto;
     resize: none;
-
     margin-left: 90px;
     line-height: 25px;
-    margin-top: -13px;
-    padding-top: 5px;
-
+    margin-top: -20px;
+    padding-top: 10px;
     background: transparent;
     border: none;
     outline: none;
+}
 
-    font-family: 'Indie Flower', cursive;
-    font-size: 18px;
+.resolution-input::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resolution-input::-webkit-scrollbar-thumb {
+    background: #a6cffa;
 }
 
 .resolution-input::placeholder {
-    color: black;
+
     font-style: italic;
-    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Custom Neubrutalist Button */
+.btn {
+    background-color: white !important;
+    color: #333 !important;
+    border: 2px solid #333 !important;
+    border-radius: 4px !important;
+    padding: 10px 25px !important;
+    font-weight: bold !important;
+    box-shadow: 4px 4px 0px #333 !important;
+    transition: all 0.1s !important;
+    font-family: inherit !important;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px #333 !important;
+    background-color: white !important;
+    color: #333 !important;
+}
+
+.btn:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 0px 0px 0px #333 !important;
+}
+
+.envelope-display {
+    background: white;
+    border: 2px solid #333;
+    padding: 60px 40px;
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* A simple, clean timer style */
+#timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    display: block;
+}
+
+.past-resolution-box {
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 4px;
+    padding: 40px;
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1);
+
+    font-size: 1.4rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: left;
+
+    display: block;
+    height: 500px;
+    width: 600px;
+    overflow-y: auto;
+
+    margin: 20px auto;
+}
+
+/* Optional: Style the scrollbar to keep it clean */
+.past-resolution-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.past-resolution-box::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+}
+
+/* 1. The Folding Animation */
+.seal-paper {
+    /* forwards keeps the notepad invisible at the end of the animation */
+    animation: foldAndAway 1.2s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes foldAndAway {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.5) rotate(5deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0) translateY(-500px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* 2. The Envelope Entry Animation */
+.envelope-entry {
+    /* 'both' ensures it starts at scale 0 and stays at scale 1 */
+    animation: popIn 0.8s both cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+::selection {
+    background: #fff38993;
+    color: #000;
 }
