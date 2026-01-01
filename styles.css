@@ -1,16 +1,31 @@
 .resolution-input,
 .past-resolution-box,
-.resolution-input::placeholder,
-h1,
-h2 {
+h2,
+.lead {
     font-family: 'Patrick Hand', cursive;
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.resolution-input,
+.past-resolution-box {
     font-size: 1.4rem;
     color: #2c2c2c;
 }
 
+.resolution-input::placeholder {
+    font-family: 'Patrick Hand', cursive;
+    color: slategray;
+    font-style: italic;
+}
+
 .container {
     background-color: #fff5de;
-
     background-image: radial-gradient(#c26e007a 1px, transparent 1px);
     background-size: 30px 30px;
     max-width: 100% !important;
@@ -24,7 +39,8 @@ h2 {
     background-position: left;
     background-repeat: repeat-y;
 
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 600px;
     margin: auto;
 
@@ -60,11 +76,6 @@ h2 {
     background: #a6cffa;
 }
 
-.resolution-input::placeholder {
-    color: slategray;
-    font-style: italic;
-}
-
 /* Custom Neubrutalist Button */
 .btn {
     background-color: white !important;
@@ -90,14 +101,25 @@ h2 {
     box-shadow: 0px 0px 0px #333 !important;
 }
 
+.btn-danger-confirm {
+    background-color: #ffe5e5 !important;
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+}
+
 .envelope-display {
     background: white;
     border: 2px solid #333;
     padding: 60px 40px;
     box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto;
     position: relative;
+}
+
+.icon {
+    font-size: 5rem;
 }
 
 #timer {
@@ -126,7 +148,7 @@ h2 {
 
     display: block;
     height: 500px;
-    width: 600px;
+    width: 100%;
     overflow-y: auto;
 
     margin: 20px auto;
@@ -182,101 +204,73 @@ h2 {
     }
 }
 
+/* 3. Fade In Animation for Reveal */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 ::selection {
     background: #fff38993;
     color: #000;
 }
 
-h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
 .lead {
-    font-family: 'Patrick Hand', cursive;
     font-size: 1.5rem !important;
     margin: 0 auto;
 }
 
-.toast {
-    border: 2px solid #333 !important;
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 0;
+.reveal-container h1 {
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
-/* Mobile Responsive Styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .notepad-wrapper {
-        width: 90vw;
         height: 500px;
-        max-width: 400px;
-        padding-top: 20px;
-        box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .resolution-input {
-        width: 80%;
-        margin-left: 50px;
-        font-size: 1.2rem;
-        line-height: 22px;
     }
 
     .envelope-display {
-        width: 90vw;
-        max-width: 400px;
         padding: 40px 20px;
-        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .past-resolution-box {
-        width: 90vw;
-        max-width: 400px;
-        height: 400px;
-        padding: 20px;
-        font-size: 1.2rem;
     }
 
     #timer {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
-    h1 {
-        font-size: 2rem !important;
-    }
-
-    .lead {
-        font-size: 1.2rem !important;
-    }
-
-    .container {
-        background-size: 20px 20px;
-        padding: 10px !important;
-    }
-
-    .btn {
-        padding: 8px 20px !important;
-        font-size: 0.9rem !important;
+    .past-resolution-box {
+        height: 400px;
+        padding: 20px;
+        width: 75%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .notepad-wrapper {
-        width: 95vw;
-        height: 450px;
+        height: 400px;
     }
 
     .resolution-input {
-        margin-left: 40px;
-        font-size: 1.1rem;
+        margin-left: 60px;
     }
 
     #timer {
         font-size: 1.5rem;
     }
 
-    h1 {
-        font-size: 1.5rem !important;
+    .reveal-container h1 {
+        font-size: 1.5rem;
     }
 }
